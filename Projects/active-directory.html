@@ -11,12 +11,17 @@
 
     <nav>
         <div class="logo"><a href="../index.html" style="color:white; text-decoration:none;">← Back to Base</a></div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
     <div class="project-container">
         <h1>Enterprise Active Directory Lab</h1>
         <p style="color:var(--accent); font-family:var(--font-mono); margin-bottom:2rem;">
-            STACK: Windows Server 2022, Windows 10/11, Sysmon, Splunk/Wazuh
+            STACK: Windows Server 2022, Windows 11, Sysmon, Wazuh
         </p>
 
         <h3>1. The Objective</h3>
@@ -30,9 +35,9 @@
         <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Domain Controller & Endpoint Architecture</p>
         <br>
 
-        <h3>2. Hardening with Group Policy (GPO)</h3>
+        <h3>2. Hardening with Group Policy (GPOs)</h3>
         <p>
-            I deployed a Domain Controller and joined Windows 10/11 workstations to the domain.
+            I deployed a Domain Controller and joined Windows workstations to the domain.
             Key security policies implemented included:
         </p>
         <ul style="color:var(--text-secondary); margin-left:1.5rem; margin-bottom:1rem;">
@@ -46,7 +51,7 @@
         <h3>3. Detection & Monitoring</h3>
         <p>
             I installed <b>Sysmon</b> on all endpoints to capture detailed telemetry. 
-            These logs were forwarded to my SIEM (Wazuh/Splunk), allowing me to visualize 
+            These logs were forwarded to my SIEM (Wazuh), allowing me to visualize 
             failed login attempts and flag suspicious process creation in real-time.
         </p>
 

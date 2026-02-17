@@ -11,6 +11,8 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
@@ -31,7 +33,7 @@ nav {
     border-bottom: 1px solid #334155;
 }
 
-.logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
+.logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.5px; }
 
 .nav-links a {
     color: var(--text-secondary);
@@ -43,9 +45,9 @@ nav {
 
 .nav-links a:hover { color: var(--accent); }
 
-/* Hero Section (Terminal Vibe) */
+/* Hero Section */
 .hero {
-    height: 80vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,10 +58,10 @@ nav {
 
 .terminal-box {
     font-family: var(--font-mono);
-    font-size: 1.5rem; /* Not too big */
+    font-size: 1.4rem;
     color: var(--accent);
-    margin-bottom: 1rem;
-    min-height: 1.6em; /* Keeps layout stable while typing */
+    margin-bottom: 1.5rem;
+    min-height: 1.6em;
 }
 
 .cursor {
@@ -71,19 +73,21 @@ nav {
 
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-.hero p { color: var(--text-secondary); max-width: 600px; margin-top: 1rem; }
+.hero p { color: var(--text-secondary); max-width: 700px; font-size: 1.1rem; }
 
-/* Tech Stack */
+/* Tech Stack Badge Section */
 .tech-stack {
     text-align: center;
     padding: 4rem 5%;
     background-color: var(--card-bg);
+    border-top: 1px solid #334155;
+    border-bottom: 1px solid #334155;
 }
 
 .tech-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
@@ -91,15 +95,16 @@ nav {
 .badge {
     background: #334155;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
     color: var(--text-primary);
     border: 1px solid #475569;
+    font-family: var(--font-mono);
 }
 
 /* Projects Grid */
-.projects-section { padding: 4rem 5%; }
-.section-title { margin-bottom: 2rem; font-size: 1.8rem; }
+.projects-section { padding: 5rem 5%; }
+.section-title { margin-bottom: 2.5rem; font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
 
 .grid {
     display: grid;
@@ -109,7 +114,7 @@ nav {
 
 .card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 2rem;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid #334155;
@@ -123,14 +128,13 @@ nav {
     border-color: var(--accent);
 }
 
-.card h3 { color: var(--text-primary); margin-bottom: 0.5rem; }
-.card p { color: var(--text-secondary); font-size: 0.95rem; }
+.card h3 { color: var(--text-primary); margin-bottom: 0.75rem; }
+.card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
 .card-tag { 
     display: inline-block; 
-    font-size: 0.75rem; 
+    font-size: 0.8rem; 
     color: var(--accent); 
-    margin-top: 1rem; 
-    font-family: var(--font-mono);
+    font-weight: 600;
 }
 
 /* Project Detail Page Styling */
@@ -147,11 +151,16 @@ nav {
     border: 1px solid #334155;
 }
 
+.project-container ul li {
+    margin-bottom: 0.8rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
-    padding: 3rem;
+    padding: 4rem 1rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
     border-top: 1px solid #334155;
+    background-color: var(--bg-color);
 }
