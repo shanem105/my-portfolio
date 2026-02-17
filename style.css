@@ -1,16 +1,15 @@
 /* style.css */
 :root {
-    --bg-color: #0f172a;       /* Deep Blue/Grey Background */
-    --card-bg: #1e293b;        /* Lighter Blue/Grey for Cards */
-    --text-primary: #f8fafc;   /* Almost White */
-    --text-secondary: #94a3b8; /* Muted Grey */
-    --accent: #38bdf8;         /* Cyan/Blue Accent */
+    --bg-color: #0f172a;       
+    --card-bg: #1e293b;        
+    --text-primary: #f8fafc;   
+    --text-secondary: #94a3b8; 
+    --accent: #38bdf8;         
     --font-main: 'Inter', sans-serif;
     --font-mono: 'Fira Code', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -20,7 +19,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -45,7 +43,6 @@ nav {
 
 .nav-links a:hover { color: var(--accent); }
 
-/* Hero Section */
 .hero {
     height: 70vh;
     display: flex;
@@ -75,7 +72,6 @@ nav {
 
 .hero p { color: var(--text-secondary); max-width: 700px; font-size: 1.1rem; }
 
-/* Tech Stack Badge Section */
 .tech-stack {
     text-align: center;
     padding: 4rem 5%;
@@ -102,7 +98,6 @@ nav {
     font-family: var(--font-mono);
 }
 
-/* Projects Grid */
 .projects-section { padding: 5rem 5%; }
 .section-title { margin-bottom: 2.5rem; font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
 
@@ -130,14 +125,8 @@ nav {
 
 .card h3 { color: var(--text-primary); margin-bottom: 0.75rem; }
 .card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
-.card-tag { 
-    display: inline-block; 
-    font-size: 0.8rem; 
-    color: var(--accent); 
-    font-weight: 600;
-}
+.card-tag { display: inline-block; font-size: 0.8rem; color: var(--accent); font-weight: 600; }
 
-/* Project Detail Page Styling */
 .project-container {
     max-width: 800px;
     margin: 4rem auto;
@@ -151,11 +140,8 @@ nav {
     border: 1px solid #334155;
 }
 
-.project-container ul li {
-    margin-bottom: 0.8rem;
-}
+.project-container ul li { margin-bottom: 0.8rem; }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 4rem 1rem;
