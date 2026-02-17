@@ -1,18 +1,18 @@
 /* script.js */
 
-// The text you want to "type out"
-const text = "Initializing Cyber Defense Sequence...";
+// Core Skills
+const text = "Network Defense | Infrastructure Hardening | Traffic Analysis";
 
-// Speed in milliseconds (lower is faster)
+// speed in ms
 const speed = 50; 
 
 let i = 0;
 
 function typeWriter() {
-    // Look for the element with id="typewriter"
+    // Look for the element with id="typewriter" in HTML
     const element = document.getElementById("typewriter");
     
-    // Only run if the element exists (prevents errors on other pages)
+    // Only run if the element exists and we haven't finished typing
     if (element && i < text.length) {
         element.innerHTML += text.charAt(i);
         i++;
