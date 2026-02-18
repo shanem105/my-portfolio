@@ -43,8 +43,10 @@ nav {
 
 .nav-links a:hover { color: var(--accent); }
 
+/* UPDATED: Height reduced to 45vh to tighten spacing */
 .hero {
-    height: 70vh;
+    height: 45vh;
+    min-height: 400px; /* Prevents squishing on small screens */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,9 +74,10 @@ nav {
 
 .hero p { color: var(--text-secondary); max-width: 700px; font-size: 1.1rem; }
 
+/* UPDATED: Padding reduced to 2rem */
 .tech-stack {
     text-align: center;
-    padding: 4rem 5%;
+    padding: 2rem 5%;
     background-color: var(--card-bg);
     border-top: 1px solid #334155;
     border-bottom: 1px solid #334155;
@@ -98,7 +101,8 @@ nav {
     font-family: var(--font-mono);
 }
 
-.projects-section { padding: 5rem 5%; }
+/* UPDATED: Padding reduced to 2rem */
+.projects-section { padding: 2rem 5%; }
 .section-title { margin-bottom: 2.5rem; font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
 
 .grid {
