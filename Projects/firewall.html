@@ -31,29 +31,52 @@
             Deep Packet Inspection (DPI) and intrusion detection.
         </p>
 
-        <img src="../assets/images/firewall-diagram.png" alt="Network Diagram" class="project-img">
-        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Network Topology</p>
+        <img src="../assets/images/opnsense%20dashboard.png" alt="OPNsense System Dashboard" class="project-img">
+        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: System Status verifying dual-homed interfaces (WAN/LAN) and service uptime.</p>
         <br>
 
         <h3>2. Implementation Details</h3>
         <p>
-            I configured OPNsense on a dedicated appliance with two physical NICs (WAN/LAN). 
-            Using Zenarmor, I created policies to block specific application categories (Ads, Trackers, Adult Content).
-            I also integrated Unbound DNS to prevent DNS tunneling attacks.
+            <strong>Phase 1: DNS Sinkholing.</strong> Before traffic even hits the firewall rules, I configured Unbound DNS to filter malicious domains. This prevents devices from resolving known malware command-and-control (C2) servers.
         </p>
+        <img src="../assets/images/dns_blocklists_whitelist.png" alt="DNS Blocklist Config" class="project-img">
+        
+        <p>
+            <strong>Phase 2: Application Control.</strong> Using Zenarmor, I created strict policies to block specific application categories including Ads, Trackers, and Malicious Sites to sanitize network traffic.
+        </p>
+        <img src="../assets/images/zenarmor_modified_default_policy.png" alt="Security Policies" class="project-img">
 
-        <img src="../assets/images/zenarmor-dashboard.png" alt="Zenarmor Dashboard" class="project-img">
+        <p>
+            <strong>Phase 3: SIEM Integration.</strong> To centralize monitoring, I configured OPNsense to forward syslog events to my <strong>Wazuh</strong> manager. This allowed me to correlate network edge blocks with internal endpoint alerts in a single pane of glass.
+        </p>
 
         <h3>3. Challenges & Resolutions</h3>
         <p>
-            Initially, the strict Zenarmor policies blocked some legitimate internet browsing and shopping. 
-            I analyzed the live logs, identified the false positives, and created specific whitelist exceptions 
-            based on what sites or IPs were being denied.
+            Initially, the strict Zenarmor policies blocked legitimate internet browsing and shopping sites. 
+            I analyzed the live logs, identified some false positives, and created specific whitelist exceptions 
+            based on the destination domains.
         </p>
+
+        <img src="../assets/images/zenarmor_policy_whitelist_config.png" alt="Whitelist Configuration" class="project-img">
+        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 4: Creating exclusions for legitimate business services.</p>
 
         <br><hr style="border-color:#334155"><br>
         
-        <p><strong>Impact:</strong> Achieved visibility of network traffic, blocking of ads, and blocked thousands of tracking attempts daily.</p>
+        <h3>4. Operational Impact</h3>
+        <p>
+            Achieved total visibility of network traffic. The system now actively blocks thousands of tracking attempts and malicious advertisements daily, reducing the attack surface for all endpoints.
+        </p>
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <img src="../assets/images/zenarmor_dashboard.png" alt="Threat Dashboard" class="project-img" style="margin-top:0;">
+                <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Threat Intelligence Dashboard</p>
+            </div>
+            <div>
+                <img src="../assets/images/zenarmor_blocking.jpg" alt="Live Blocking Logs" class="project-img" style="margin-top:0;">
+                <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Live Traffic Analysis</p>
+            </div>
+        </div>
     </div>
 
     <footer>

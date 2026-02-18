@@ -26,26 +26,28 @@
 
         <h3>1. The Mission</h3>
         <p>
-            I participated in a critical infrastructure refresh for the Wing, replacing aging 
-            switch hardware to support increased data throughput and improve network reliability 
+            I participated in a critical base-wide infrastructure refresh, replacing aging 
+            switch hardware, installing UPS devices, and PDUs to support increased data throughput and improve network reliability 
             for mission-critical operations.
         </p>
 
-        <img src="../assets/images/switch-rack.png" alt="Network Rack Upgrade" class="project-img">
-        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Network Rack Implementation</p>
+        <img src="../assets/images/basic_infrastructure_diagram.png" alt="Network Topology Diagram" class="project-img">
+        <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: Logical Topology demonstrating VLAN segmentation between Voice and Data traffic.</p>
         <br>
 
         <h3>2. Implementation Steps</h3>
         <ul style="color:var(--text-secondary); margin-left:1.5rem; margin-bottom:1rem;">
             <li><b>Physical Installation:</b> Racking and stacking new enterprise switches, managing cable runs for airflow and organization.</li>
-            <li><b>Configuration:</b> Port security implementation and VLAN tagging to segregate voice, data, and management traffic.</li>
+            <li><b>VLAN Configuration:</b> (Note: Configuration values have been sanitized for OPSEC) Configured 802.1Q tagging to segregate Data (VLAN 10) and Voice (VLAN 20) traffic, ensuring QoS for VoIP phones.</li>
+            <li><b>Documentation:</b> Observed creation of logical network diagrams (see Fig 1 ex.) to map IP schemas and port assignments for future troubleshooting.</li>
             <li><b>Validation:</b> Conducting post-installation connectivity tests to ensure zero downtime for critical assets.</li>
+            <li><b>Sanitization:</b> Managed the Sanitization of legacy switches for recycling them to other units in need of the equipment. </li>
         </ul>
 
         <h3>3. Operational Impact</h3>
         <p>
-            This upgrade reduced network latency and eliminated packet loss issues associated 
-            with the legacy hardware. It also standardized the configuration across the Wing, 
+            This upgrade reduced network latency and eliminated massive packet loss issues associated 
+            with the legacy hardware. It also standardized the configuration across the base, 
             making future troubleshooting significantly faster.
         </p>
 
