@@ -31,7 +31,7 @@
             Deep Packet Inspection (DPI) and intrusion detection.
         </p>
 
-        <img src="../assets/images/opnsense%20dashboard.png" alt="OPNsense System Dashboard" class="project-img">
+        <img src="../Assets/Images/opnsense%20dashboard.png" alt="OPNsense System Dashboard" class="project-img">
         <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 1: System Status verifying dual-homed interfaces (WAN/LAN) and service uptime.</p>
         <br>
 
@@ -39,12 +39,12 @@
         <p>
             <strong>Phase 1: DNS Sinkholing.</strong> Before traffic even hits the firewall rules, I configured Unbound DNS to filter malicious domains. This prevents devices from resolving known malware command-and-control (C2) servers.
         </p>
-        <img src="../assets/images/dns_blocklists_whitelist.png" alt="DNS Blocklist Config" class="project-img">
+        <img src="../Assets/Images/dns_blocklists_whitelist.png" alt="DNS Blocklist Config" class="project-img">
         
         <p>
-            <strong>Phase 2: Application Control.</strong> Using Zenarmor, I created strict policies to block specific application categories including Ads, Trackers, and Malicious Sites to sanitize network traffic.
+            <strong>Phase 2: Application Control.</strong> Using Zenarmor, I created strict policies to block specific application categories including Ads, Trackers, and Adult Content to sanitize network traffic.
         </p>
-        <img src="../assets/images/zenarmor_modified_default_policy.png" alt="Security Policies" class="project-img">
+        <img src="../Assets/Images/zenarmor_modified_default_policy.png" alt="Security Policies" class="project-img">
 
         <p>
             <strong>Phase 3: SIEM Integration.</strong> To centralize monitoring, I configured OPNsense to forward syslog events to my <strong>Wazuh</strong> manager. This allowed me to correlate network edge blocks with internal endpoint alerts in a single pane of glass.
@@ -53,11 +53,11 @@
         <h3>3. Challenges & Resolutions</h3>
         <p>
             Initially, the strict Zenarmor policies blocked legitimate internet browsing and shopping sites. 
-            I analyzed the live logs, identified some false positives, and created specific whitelist exceptions 
+            I analyzed the live logs, identified the false positives, and created specific whitelist exceptions 
             based on the destination domains.
         </p>
 
-        <img src="../assets/images/zenarmor_policy_whitelist_config.png" alt="Whitelist Configuration" class="project-img">
+        <img src="../Assets/Images/zenarmor_policy_whitelist_config.png" alt="Whitelist Configuration" class="project-img">
         <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 4: Creating exclusions for legitimate business services.</p>
 
         <br><hr style="border-color:#334155"><br>
@@ -69,11 +69,11 @@
         
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div>
-                <img src="../assets/images/zenarmor_dashboard.png" alt="Threat Dashboard" class="project-img" style="margin-top:0;">
+                <img src="../Assets/Images/zenarmor_dashboard.png" alt="Threat Dashboard" class="project-img" style="margin-top:0;">
                 <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Threat Intelligence Dashboard</p>
             </div>
             <div>
-                <img src="../assets/images/zenarmor_blocking.jpg" alt="Live Blocking Logs" class="project-img" style="margin-top:0;">
+                <img src="../Assets/Images/zenarmor_blocking.jpg" alt="Live Blocking Logs" class="project-img" style="margin-top:0;">
                 <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Live Traffic Analysis</p>
             </div>
         </div>
