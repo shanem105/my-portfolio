@@ -19,7 +19,7 @@
     </nav>
 
     <div class="project-container">
-        <h1>Dual-Homed Firewall & DNS Filter</h1>
+        <h1>Dual-Homed Firewall, SIEM, and DNS Filtering</h1>
         <p style="color:var(--accent); font-family:var(--font-mono); margin-bottom:2rem;">
             TOOLS: OPNsense, Zenarmor, Unbound DNS, Wazuh
         </p>
@@ -28,7 +28,9 @@
         <p>
             The goal was to move beyond standard ISP security by building a custom perimeter firewall. 
             I needed granular control over traffic to simulate an enterprise edge network, including 
-            Deep Packet Inspection (DPI) and intrusion detection.
+            Deep Packet Inspection (DPI) and intrusion detection. After further research, I decided
+            to then forward firewall logs to my Wazuh SIEM to correlate with endpoint data for a 
+            comprehensive security monitoring solution.
         </p>
 
         <img src="../Assets/Images/opnsense%20dashboard.png" alt="OPNsense System Dashboard" class="project-img">
@@ -52,9 +54,14 @@
 
         <h3>3. Challenges & Resolutions</h3>
         <p>
-            Initially, the strict Zenarmor policies blocked legitimate internet browsing, streaming, and shopping sites. 
+            Initially, getting Wazuh to actually interpret these logs was a significant hurdle. Unlike plug-and-play tools, 
+            the Wazuh configuration language requires a rigid, code-first approach. I spent considerable time in the backend, 
+            troubleshooting why specific firewall events weren't triggering alerts. This iterative process of refining XML 
+            rules and testing decoders was frustrating but necessary—it shifted my focus from simply 'having' a SIEM to 
+            actually engineering a functional detection pipeline.
+            Additionally, the strict Zenarmor policies I implemented blocked legitimate internet browsing, streaming, and shopping sites. 
             I analyzed the live logs, identified the false positives, and created specific whitelist exceptions 
-            based on the destination domains.
+            based on the destination domains. 
         </p>
 
         <img src="../Assets/Images/zenarmor_policy_whitelist_config.png" alt="Whitelist Configuration" class="project-img">
@@ -64,21 +71,30 @@
         
         <h3>4. Operational Impact</h3>
         <p>
-            Achieved total visibility of network traffic. The system now actively blocks thousands of tracking attempts and malicious advertisements daily.
+            Achieved total visibility of network traffic. The system now actively blocks thousands of tracking attempts and malicious advertisements daily. 
+            Experienced real-time insights into blocked threats and user behavior through the SIEM dashboard, enabling proactive security monitoring and incident response.
         </p>
         
         <img src="../Assets/Images/zenarmor_dashboard.png" alt="Threat Dashboard" class="project-img">
         <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center; margin-bottom: 2rem;">Figure 5: Threat Intelligence Dashboard showing blocked threats.</p>
 
-        <img src="../Assets/Images/zenarmor_blocking.png" alt="Live Blocking Logs" class="project-img">
+       <img src="../Assets/Images/zenarmor_blocking.png" alt="Live Blocking Logs" class="project-img">
         <p style="font-size:0.8rem; color:var(--text-secondary); text-align:center;">Figure 6: Live Traffic Analysis confirming active blocking rules.</p>
-            </div>
+            
+        <div style="text-align: center;">
+            <a href="../index.html" class="return-btn">← Return to Home</a>
         </div>
-    </div>
 
-    <footer>
-        &copy; 2026. <a href="../index.html" style="color:var(--accent)">Return Home</a>
-    </footer>
+    </div>
+</div>
+
+<footer>
+    &copy; <span id="year"></span> Shane Mack. All rights reserved.
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
 
 </body>
 </html>
